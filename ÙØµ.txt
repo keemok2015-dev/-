@@ -1,0 +1,109 @@
+import { useState, useEffect } from 'react';
+
+// ==========================================
+// 1. الوظائف الخوادمية (Backend Functions)
+// ==========================================
+const OWNER_USER_ID = "owner_unique_id_123"; // معرف المالك المعتمد
+
+export async function getProfitsData(userId: string) {
+  if (userId !== OWNER_USER_ID) {
+    throw new Error("غير مسموح لك بالاطلاع على الأرباح. هذه الصلاحية للمالك فقط.");
+  }
+  return {
+    success: true,
+    totalProfits: 25000.00,
+    currency: "SAR"
+  };
+}
+
+export async function transferFunds(userId: string, amount: number) {
+  if (userId !== OWNER_USER_ID) {
+    throw new Error("عملية مرفوضة: تحويل الأموال متاح للمالك فقط.");
+  }
+  return {
+    success: true,
+    message: `تم تحويل مبلغ ${amount} بنجاح.`
+  };
+}
+
+// ==========================================
+// 2. واجهة المستخدم (Frontend Component)
+// ==========================================
+interface OwnerDashboardProps {
+  currentUserId: string;
+}
+
+export default function OwnerDashboard({ currentUserId }: OwnerDashboardProps) {
+  const [profits, setProfits] = useState<number | null>(null);
+  const [currency, setCurrency] = useState<string>("SAR");
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [transferStatus, setTransferStatus] = useState<string>('');
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setLoading(true);
+        const data = await getProfitsData(currentUserId);
+        setProfits(data.totalProfits);
+        setCurrency(data.currency);
+        setError('');
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadData();
+  }, [currentUserId]);
+
+  const handleTransfer = async () => {
+    try {
+      setTransferStatus('جاري تنفيذ التحويل...');
+      const res = await transferFunds(currentUserId, profits || 0);
+      setTransferStatus(res.message);
+    } catch (err: any) {
+      setTransferStatus(`خطأ: ${err.message}`);
+    }
+  };
+
+  if (loading) {
+    return <div className="p-6 text-center text-gray-600">جاري التحقق من الصلاحيات والتحميل...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 max-w-md mx-auto mt-6 bg-red-50 border border-red-200 text-red-700 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg mb-1">وصول محظور ⚠️</h3>
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 max-w-lg mx-auto mt-6 bg-white border border-gray-100 shadow-md rounded-xl">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl font-bold text-gray-800">لوحة تحكم المالك</h2>
+        <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">مشرف رئيسي</span>
+      </div>
+
+      <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
+        <p className="text-sm text-gray-500 mb-1">إجمالي الأرباح المتاحة:</p>
+        <p className="text-3xl font-extrabold text-green-600">
+          {profits?.toLocaleString()} <span className="text-lg font-medium">{currency}</span>
+        </p>
+      </div>
+      
+      <button
+        onClick={handleTransfer}
+        className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow transition duration-200 mb-3"
+      >
+        تحويل الأرباح بالكامل
+      </button>
+
+      {transferStatus && (
+        <p className="text-center text-sm text-gray-600 mt-2 font-medium">{transferStatus}</p>
+      )}
+    </div>
+  );
+}

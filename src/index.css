@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #060913;
+    --card-surface: rgba(16, 22, 36, 0.75);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --accent-emerald: #10b981;
+    --accent-gold: #f59e0b;
+    --accent-crimson: #ef4444;
+  }
+
+  body {
+    font-family: 'Cairo', 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #060913;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 60%),
+      radial-gradient(circle at 100% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      linear-gradient(to bottom, rgba(6, 9, 19, 0.7) 0%, rgba(6, 9, 19, 0.92) 50%, rgba(6, 9, 19, 0.98) 100%),
+      url('/src/assets/images/stadium_night_banner_1791149583112.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f8fafc;
+    margin: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  [dir="ltr"] body {
+    font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Light Mode Theme */
+body.light-mode {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(248, 250, 252, 0.94) 0%, rgba(241, 245, 249, 0.97) 50%, rgba(226, 232, 240, 1) 100%),
+    url('/src/assets/images/stadium_night_banner_1791149583112.jpg') !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .match-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .match-card span.text-white,
+body.light-mode .match-card p.text-white,
+body.light-mode .match-card h4.text-white {
+  color: #0f172a !important;
+}
+
+body.light-mode .app-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+body.light-mode .app-header h1 {
+  color: #0f172a !important;
+}
+
+body.light-mode .bottom-nav-bar {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Premium Glassmorphic Card Styling */
+.match-card {
+  background: linear-gradient(145deg, rgba(17, 24, 39, 0.85) 0%, rgba(13, 19, 33, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.match-card:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+/* Hide scrollbar for touch-friendly horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pulsing beacon animations */
+@keyframes radar-pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.9; }
+}
+
+.radar-ping {
+  animation: radar-pulse 2s infinite ease-in-out;
+}

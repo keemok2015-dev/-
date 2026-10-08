@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #0b0e14;
+  --card-bg: linear-gradient(145deg, #1a202c, #151a24);
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --accent-green: #00e676;
+  --live-red: #ff3b30;
+  --border-color: #2a3441;
+}
+
+@layer base {
+  body {
+    font-family: 'IBM Plex Sans Arabic', 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #070a12;
+    background-image: 
+      linear-gradient(to bottom, rgba(7, 10, 18, 0.55) 0%, rgba(7, 10, 18, 0.82) 45%, rgba(7, 10, 18, 0.96) 100%),
+      url('/src/assets/images/stadium_night_banner_1791149583112.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-primary);
+    margin: 0;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  [dir="ltr"] body {
+    font-family: 'Plus Jakarta Sans', 'IBM Plex Sans Arabic', 'Cairo', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Light Mode Theme */
+body.light-mode {
+  background-color: #f1f5f9 !important;
+  background-image: 
+    linear-gradient(to bottom, rgba(248, 250, 252, 0.92) 0%, rgba(241, 245, 249, 0.96) 50%, rgba(226, 232, 240, 0.99) 100%),
+    url('/src/assets/images/stadium_night_banner_1791149583112.jpg') !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .match-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(203, 213, 225, 0.8) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08) !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .match-card span.text-white,
+body.light-mode .match-card p.text-white,
+body.light-mode .match-card h4.text-white {
+  color: #0f172a !important;
+}
+
+body.light-mode .app-header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+body.light-mode .app-header h1 {
+  color: #0f172a !important;
+}
+
+body.light-mode .bottom-nav-bar {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.light-mode .bottom-nav-bar span.text-white {
+  color: #0f172a !important;
+}
+
+/* Hide scrollbar for touch-friendly horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism Card Style */
+.match-card {
+  background: rgba(22, 28, 42, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+.match-card:hover {
+  border-color: rgba(0, 230, 118, 0.35);
+}
+
+/* High Energy Card Animation */
+@keyframes energy-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.6), inset 0 0 20px rgba(239, 68, 68, 0.3); }
+}
+
+.high-energy-card {
+  animation: energy-glow 3s infinite ease-in-out;
+}
+
+.koralive-ad { width: 100%; min-height: 90px; margin: 12px 0; overflow: hidden; text-align: center; }

@@ -1,0 +1,8 @@
+{
+  "name": "Remix KoraLive Football Mobile App",
+  "description": "تطبيق متكامل لمتابعة نتائج المباريات المباشرة، إحصائيات الفرق، جدول الترتيب، دليل القنوات الناقلة الرسمية، وهيكلية Flutter للهواتف الذكية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

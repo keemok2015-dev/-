@@ -1,0 +1,38 @@
+{
+  "id": "/",
+  "name": "Remix KoraLive Football Mobile App",
+  "short_name": "كورة لايف",
+  "description": "تطبيق متكامل لمتابعة نتائج المباريات المباشرة، إحصائيات الفرق، جدول الترتيب، دليل القنوات الناقلة الرسمية، وهيكلية Flutter للهواتف الذكية.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090d16",
+  "theme_color": "#0b101d",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": [
+    "sports",
+    "news"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

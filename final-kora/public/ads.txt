@@ -1,0 +1,3 @@
+# Replace this line with the exact authorized seller record supplied by your ad provider.
+# Example format only — do not publish a made-up publisher ID:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

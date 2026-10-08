@@ -1,0 +1,366 @@
+// ============================================================
+// KoraLive Official Team Logos & Badges (شعارات الأندية والمنتخبات)
+// ============================================================
+
+export interface TeamBrandInfo {
+  name: string;
+  nameAr: string;
+  logoUrl: string;
+  primaryColor: string;
+  secondaryColor: string;
+  textColor: string;
+  initials: string;
+}
+
+export const REAL_TEAM_LOGOS: Record<string, string> = {
+  // Saudi Pro League Clubs
+  nassr: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Al-Nassr_FC_Logo.svg/500px-Al-Nassr_FC_Logo.svg.png',
+  hilal: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Al_Hilal_SFC_Logo.svg/500px-Al_Hilal_SFC_Logo.svg.png',
+  ittihad: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Al-Ittihad_Club_%28Jeddah%29_logo.svg/500px-Al-Ittihad_Club_%28Jeddah%29_logo.svg.png',
+  ahli: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/Al-Ahli_Saudi_FC_Logo.svg/500px-Al-Ahli_Saudi_FC_Logo.svg.png',
+  shabab: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Al-Shabab_FC_%28Riyadh%29_logo.svg/500px-Al-Shabab_FC_%28Riyadh%29_logo.svg.png',
+  ettifaq: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Al-Ettifaq_FC_logo.svg/500px-Al-Ettifaq_FC_logo.svg.png',
+  taawoun: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Al-Taawoun_FC_logo.svg/500px-Al-Taawoun_FC_logo.svg.png',
+  fateh: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Al-Fateh_SC_logo.svg/500px-Al-Fateh_SC_logo.svg.png',
+  
+  // Saudi Women League Clubs
+  'nassr-w': 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Al-Nassr_FC_Logo.svg/500px-Al-Nassr_FC_Logo.svg.png',
+  'hilal-w': 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Al_Hilal_SFC_Logo.svg/500px-Al_Hilal_SFC_Logo.svg.png',
+  'ittihad-w': 'https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Al-Ittihad_Club_%28Jeddah%29_logo.svg/500px-Al-Ittihad_Club_%28Jeddah%29_logo.svg.png',
+  'ahli-w': 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/Al-Ahli_Saudi_FC_Logo.svg/500px-Al-Ahli_Saudi_FC_Logo.svg.png',
+
+  // European Giants
+  rm: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/500px-Real_Madrid_CF.svg.png',
+  rma: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/500px-Real_Madrid_CF.svg.png',
+  bar: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/500px-FC_Barcelona_%28crest%29.svg.png',
+  fcb: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/500px-FC_Barcelona_%28crest%29.svg.png',
+  mci: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/500px-Manchester_City_FC_badge.svg.png',
+  ars: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/500px-Arsenal_FC.svg.png',
+  liv: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/500px-Liverpool_FC.svg.png',
+  mun: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/500px-Manchester_United_FC_crest.svg.png',
+  mufc: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/500px-Manchester_United_FC_crest.svg.png',
+  che: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/500px-Chelsea_FC.svg.png',
+  bay: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/500px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+  bayern: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/500px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+  psg: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/500px-Paris_Saint-Germain_F.C..svg.png',
+  int: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/500px-FC_Internazionale_Milano_2021.svg.png',
+  juv: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juventus_FC_2017_icon_%28black%29.svg/500px-Juventus_FC_2017_icon_%28black%29.svg.png',
+  sev: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Sevilla_FC_logo.svg/500px-Sevilla_FC_logo.svg.png',
+  atm: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/500px-Atletico_Madrid_2017_logo.svg.png',
+
+  // Arab Giants
+  ahly_eg: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/Al_Ahly_SC_logo.svg/500px-Al_Ahly_SC_logo.svg.png',
+  zamalek: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/ZamalekSC.png/500px-ZamalekSC.png',
+  wydad: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Wydad_Athletic_Club_logo.svg/500px-Wydad_Athletic_Club_logo.svg.png',
+  raja: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Raja_Club_Athletic_logo.svg/500px-Raja_Club_Athletic_logo.svg.png',
+  taraji: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Esp%C3%A9rance_Sportive_de_Tunis.svg/500px-Esp%C3%A9rance_Sportive_de_Tunis.svg.png',
+
+  // National Teams
+  saudi: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Saudi_Arabian_Football_Federation_logo.svg/500px-Saudi_Arabian_Football_Federation_logo.svg.png',
+  ksa: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Saudi_Arabian_Football_Federation_logo.svg/500px-Saudi_Arabian_Football_Federation_logo.svg.png',
+  japan: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Japan_national_football_team_crest.svg/500px-Japan_national_football_team_crest.svg.png',
+  jpn: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Japan_national_football_team_crest.svg/500px-Japan_national_football_team_crest.svg.png',
+  brazil: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Brazilian_Football_Confederation_logo.svg/500px-Brazilian_Football_Confederation_logo.svg.png',
+  bra: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Brazilian_Football_Confederation_logo.svg/500px-Brazilian_Football_Confederation_logo.svg.png',
+  argentina: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Argentine_Football_Association_logo.svg/500px-Argentine_Football_Association_logo.svg.png',
+  arg: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Argentine_Football_Association_logo.svg/500px-Argentine_Football_Association_logo.svg.png',
+  morocco: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Royal_Moroccan_Football_Federation_logo.svg/500px-Royal_Moroccan_Football_Federation_logo.svg.png',
+  mar: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Royal_Moroccan_Football_Federation_logo.svg/500px-Royal_Moroccan_Football_Federation_logo.svg.png',
+  egypt: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Egyptian_Football_Association_logo.svg/500px-Egyptian_Football_Association_logo.svg.png',
+  egy: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Egyptian_Football_Association_logo.svg/500px-Egyptian_Football_Association_logo.svg.png',
+  france: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/France_national_football_team_crest.svg/500px-France_national_football_team_crest.svg.png',
+  fra: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/France_national_football_team_crest.svg/500px-France_national_football_team_crest.svg.png',
+  spain: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Spain_National_Football_Team_badge.svg/500px-Spain_National_Football_Team_badge.svg.png',
+  esp: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Spain_National_Football_Team_badge.svg/500px-Spain_National_Football_Team_badge.svg.png',
+  germany: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DFB-Logo.svg/500px-DFB-Logo.svg.png',
+  ger: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DFB-Logo.svg/500px-DFB-Logo.svg.png',
+  england: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/England_national_football_team_crest.svg/500px-England_national_football_team_crest.svg.png',
+  eng: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/England_national_football_team_crest.svg/500px-England_national_football_team_crest.svg.png',
+};
+
+export const TEAM_BRAND_DATA: Record<string, TeamBrandInfo> = {
+  nassr: {
+    name: 'Al-Nassr',
+    nameAr: 'النصر',
+    logoUrl: REAL_TEAM_LOGOS.nassr,
+    primaryColor: '#FFD100',
+    secondaryColor: '#002366',
+    textColor: '#FFFFFF',
+    initials: 'NAS',
+  },
+  hilal: {
+    name: 'Al-Hilal',
+    nameAr: 'الهلال',
+    logoUrl: REAL_TEAM_LOGOS.hilal,
+    primaryColor: '#002D72',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'HIL',
+  },
+  ittihad: {
+    name: 'Al-Ittihad',
+    nameAr: 'الاتحاد',
+    logoUrl: REAL_TEAM_LOGOS.ittihad,
+    primaryColor: '#F5B335',
+    secondaryColor: '#1A1A1A',
+    textColor: '#1A1A1A',
+    initials: 'ITT',
+  },
+  ahli: {
+    name: 'Al-Ahli',
+    nameAr: 'الأهلي',
+    logoUrl: REAL_TEAM_LOGOS.ahli,
+    primaryColor: '#007A3D',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'AHL',
+  },
+  shabab: {
+    name: 'Al-Shabab',
+    nameAr: 'الشباب',
+    logoUrl: REAL_TEAM_LOGOS.shabab,
+    primaryColor: '#1A1A1A',
+    secondaryColor: '#E65100',
+    textColor: '#FFFFFF',
+    initials: 'SHB',
+  },
+  ettifaq: {
+    name: 'Al-Ettifaq',
+    nameAr: 'الاتفاق',
+    logoUrl: REAL_TEAM_LOGOS.ettifaq,
+    primaryColor: '#007A3D',
+    secondaryColor: '#C4122F',
+    textColor: '#FFFFFF',
+    initials: 'ETT',
+  },
+  rm: {
+    name: 'Real Madrid',
+    nameAr: 'ريال مدريد',
+    logoUrl: REAL_TEAM_LOGOS.rm,
+    primaryColor: '#FFFFFF',
+    secondaryColor: '#583D89',
+    textColor: '#111827',
+    initials: 'RMA',
+  },
+  rma: {
+    name: 'Real Madrid',
+    nameAr: 'ريال مدريد',
+    logoUrl: REAL_TEAM_LOGOS.rm,
+    primaryColor: '#FFFFFF',
+    secondaryColor: '#583D89',
+    textColor: '#111827',
+    initials: 'RMA',
+  },
+  bar: {
+    name: 'FC Barcelona',
+    nameAr: 'برشلونة',
+    logoUrl: REAL_TEAM_LOGOS.bar,
+    primaryColor: '#A50044',
+    secondaryColor: '#004D98',
+    textColor: '#FFFFFF',
+    initials: 'FCB',
+  },
+  fcb: {
+    name: 'FC Barcelona',
+    nameAr: 'برشلونة',
+    logoUrl: REAL_TEAM_LOGOS.bar,
+    primaryColor: '#A50044',
+    secondaryColor: '#004D98',
+    textColor: '#FFFFFF',
+    initials: 'FCB',
+  },
+  mci: {
+    name: 'Manchester City',
+    nameAr: 'مانشستر سيتي',
+    logoUrl: REAL_TEAM_LOGOS.mci,
+    primaryColor: '#6CABDD',
+    secondaryColor: '#1C2C5B',
+    textColor: '#FFFFFF',
+    initials: 'MCI',
+  },
+  ars: {
+    name: 'Arsenal',
+    nameAr: 'أرسنال',
+    logoUrl: REAL_TEAM_LOGOS.ars,
+    primaryColor: '#EF0107',
+    secondaryColor: '#063672',
+    textColor: '#FFFFFF',
+    initials: 'ARS',
+  },
+  liv: {
+    name: 'Liverpool',
+    nameAr: 'ليفربول',
+    logoUrl: REAL_TEAM_LOGOS.liv,
+    primaryColor: '#C8102E',
+    secondaryColor: '#00B2A9',
+    textColor: '#FFFFFF',
+    initials: 'LIV',
+  },
+  mun: {
+    name: 'Manchester United',
+    nameAr: 'مانشستر يونايتد',
+    logoUrl: REAL_TEAM_LOGOS.mun,
+    primaryColor: '#DA291C',
+    secondaryColor: '#FBE122',
+    textColor: '#FFFFFF',
+    initials: 'MUN',
+  },
+  che: {
+    name: 'Chelsea',
+    nameAr: 'تشيلسي',
+    logoUrl: REAL_TEAM_LOGOS.che,
+    primaryColor: '#034694',
+    secondaryColor: '#EE242C',
+    textColor: '#FFFFFF',
+    initials: 'CHE',
+  },
+  bay: {
+    name: 'Bayern Munich',
+    nameAr: 'بايرن ميونخ',
+    logoUrl: REAL_TEAM_LOGOS.bay,
+    primaryColor: '#DC052D',
+    secondaryColor: '#0066B2',
+    textColor: '#FFFFFF',
+    initials: 'BAY',
+  },
+  psg: {
+    name: 'Paris Saint-Germain',
+    nameAr: 'باريس سان جيرمان',
+    logoUrl: REAL_TEAM_LOGOS.psg,
+    primaryColor: '#004170',
+    secondaryColor: '#DA291C',
+    textColor: '#FFFFFF',
+    initials: 'PSG',
+  },
+  int: {
+    name: 'Inter Milan',
+    nameAr: 'إنتر ميلان',
+    logoUrl: REAL_TEAM_LOGOS.int,
+    primaryColor: '#010E80',
+    secondaryColor: '#000000',
+    textColor: '#FFFFFF',
+    initials: 'INT',
+  },
+  juv: {
+    name: 'Juventus',
+    nameAr: 'يوفنتوس',
+    logoUrl: REAL_TEAM_LOGOS.juv,
+    primaryColor: '#000000',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'JUV',
+  },
+  sev: {
+    name: 'Sevilla',
+    nameAr: 'إشبيلية',
+    logoUrl: REAL_TEAM_LOGOS.sev,
+    primaryColor: '#D4001F',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'SEV',
+  },
+  saudi: {
+    name: 'Saudi Arabia',
+    nameAr: 'السعودية',
+    logoUrl: REAL_TEAM_LOGOS.saudi,
+    primaryColor: '#006C35',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'KSA',
+  },
+  japan: {
+    name: 'Japan',
+    nameAr: 'اليابان',
+    logoUrl: REAL_TEAM_LOGOS.japan,
+    primaryColor: '#002B7F',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'JPN',
+  },
+  brazil: {
+    name: 'Brazil',
+    nameAr: 'البرازيل',
+    logoUrl: REAL_TEAM_LOGOS.brazil,
+    primaryColor: '#FEDF00',
+    secondaryColor: '#009739',
+    textColor: '#002776',
+    initials: 'BRA',
+  },
+  argentina: {
+    name: 'Argentina',
+    nameAr: 'الأرجنتين',
+    logoUrl: REAL_TEAM_LOGOS.argentina,
+    primaryColor: '#74ACDF',
+    secondaryColor: '#FFFFFF',
+    textColor: '#163E75',
+    initials: 'ARG',
+  },
+  morocco: {
+    name: 'Morocco',
+    nameAr: 'المغرب',
+    logoUrl: REAL_TEAM_LOGOS.morocco,
+    primaryColor: '#C1272D',
+    secondaryColor: '#006233',
+    textColor: '#FFFFFF',
+    initials: 'MAR',
+  },
+  egypt: {
+    name: 'Egypt',
+    nameAr: 'مصر',
+    logoUrl: REAL_TEAM_LOGOS.egypt,
+    primaryColor: '#C8102E',
+    secondaryColor: '#FFFFFF',
+    textColor: '#FFFFFF',
+    initials: 'EGY',
+  },
+  france: {
+    name: 'France',
+    nameAr: 'فرنسا',
+    logoUrl: REAL_TEAM_LOGOS.france,
+    primaryColor: '#002395',
+    secondaryColor: '#ED2939',
+    textColor: '#FFFFFF',
+    initials: 'FRA',
+  },
+  spain: {
+    name: 'Spain',
+    nameAr: 'إسبانيا',
+    logoUrl: REAL_TEAM_LOGOS.spain,
+    primaryColor: '#AA151B',
+    secondaryColor: '#F1BF00',
+    textColor: '#FFFFFF',
+    initials: 'ESP',
+  },
+  england: {
+    name: 'England',
+    nameAr: 'إنجلترا',
+    logoUrl: REAL_TEAM_LOGOS.england,
+    primaryColor: '#CF081F',
+    secondaryColor: '#FFFFFF',
+    textColor: '#00247D',
+    initials: 'ENG',
+  },
+  germany: {
+    name: 'Germany',
+    nameAr: 'ألمانيا',
+    logoUrl: REAL_TEAM_LOGOS.germany,
+    primaryColor: '#000000',
+    secondaryColor: '#DD0000',
+    textColor: '#FFCC00',
+    initials: 'GER',
+  },
+};
+
+export function getTeamLogoUrl(teamId: string, fallbackEmoji: string = '⚽'): { isImage: boolean; src: string } {
+  const normalizedId = teamId.toLowerCase().trim();
+  const url = REAL_TEAM_LOGOS[normalizedId];
+  if (url) {
+    return { isImage: true, src: url };
+  }
+  return { isImage: false, src: fallbackEmoji };
+}
+
+export function getTeamBrand(teamId: string): TeamBrandInfo | null {
+  const normalizedId = teamId.toLowerCase().trim();
+  return TEAM_BRAND_DATA[normalizedId] || null;
+}

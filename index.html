@@ -1,338 +1,44 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="ar" dir="rtl" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="AI Studio landing page for building faster with Gemini."
-    />
-    <title>AI Studio | Built with Gemini</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Remix KoraLive Football Mobile App</title>
+    <meta name="description" content="تطبيق متكامل لمتابعة نتائج المباريات المباشرة، إحصائيات الفرق، جدول الترتيب، دليل القنوات الناقلة الرسمية، وهيكلية Flutter للهواتف الذكية." />
+    
+    <!-- Multi-Platform Mobile & PWA Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b101d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="كورة لايف" />
+    <meta name="application-name" content="كورة لايف" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- OpenGraph & Social Sharing Cards (WhatsApp, Telegram, Facebook) -->
+    <meta property="og:title" content="Remix KoraLive Football Mobile App" />
+    <meta property="og:description" content="تطبيق متكامل لمتابعة نتائج المباريات المباشرة، إحصائيات الفرق، جدول الترتيب، دليل القنوات الناقلة الرسمية، وهيكلية Flutter للهواتف الذكية." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ais-pre-274yqkpldtyyfykqfsyysv-909959587565.europe-west2.run.app" />
+    <meta property="og:site_name" content="كورة لايف" />
+    <meta property="og:image" content="https://ais-pre-274yqkpldtyyfykqfsyysv-909959587565.europe-west2.run.app/icon-512.png" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Remix KoraLive Football Mobile App" />
+    <meta name="twitter:description" content="تطبيق متكامل لمتابعة نتائج المباريات المباشرة، إحصائيات الفرق، جدول الترتيب، دليل القنوات الناقلة الرسمية، وهيكلية Flutter للهواتف الذكية." />
+    <meta name="twitter:image" content="https://ais-pre-274yqkpldtyyfykqfsyysv-909959587565.europe-west2.run.app/icon-512.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <nav class="nav container">
-          <div class="brand">
-            <div class="brand-mark">AI</div>
-            <span>Studio</span>
-          </div>
-
-          <div class="nav-links">
-            <a href="#features">المميزات</a>
-            <a href="#workflow">العمل</a>
-            <a href="#pricing">التسعير</a>
-            <a href="#contact">تواصل</a>
-          </div>
-
-          <a class="button button-primary" href="#start">ابدأ الآن</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="hero container">
-          <div class="hero-copy">
-            <div class="eyebrow">Built with AI Studio</div>
-            <h1>أسرع طريق من الفكرة إلى الإنتاج مع Gemini.</h1>
-            <p>
-              ابدأ من سطر واحد من التعليمات، وقم ببناء تطبيقات ذكية، وتحسين
-              تجربة المستخدم، ونشرها بثقة في الإنتاج.
-            </p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://aistudio.google.com/apps" target="_blank" rel="noreferrer">ابدأ البناء</a>
-              <a class="button button-secondary" href="#features">استكشف الميزات</a>
-            </div>
-
-            <ul class="hero-meta" aria-label="مؤشرات نجاح">
-              <li><strong>10x</strong><span>أسرع في التطوير</span></li>
-              <li><strong>24/7</strong><span>مساعد ذكي</span></li>
-              <li><strong>99.9%</strong><span>موثوقية الخدمة</span></li>
-            </ul>
-          </div>
-
-          <div class="hero-visual" aria-label="واجهة التطبيق">
-            <div class="dashboard-card">
-              <div class="topbar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div class="content-panel">
-                <div class="chat-window">
-                  <div class="message assistant">
-                    <span class="dot"></span>
-                    <span>بناء واجهة متجر ذكي...</span>
-                  </div>
-                  <div class="message user">إنشاء تطبيق تجريبي بسرعة</div>
-                </div>
-
-                <div class="mini-grid">
-                  <div class="stat-box glow-blue">
-                    <small>التنمية</small>
-                    <strong>92%</strong>
-                  </div>
-                  <div class="stat-box glow-purple">
-                    <small>الذكاء</small>
-                    <strong>Gemini</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="features" class="features container">
-          <div class="section-heading">
-            <span class="eyebrow">المميزات</span>
-            <h2>من الفكرة إلى المنتج في دورة واحدة</h2>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="icon">✦</div>
-              <h3>إنشاء سريع</h3>
-              <p>
-                حول الوصف البسيط إلى واجهات وتطبيقات كاملة مع دعم ذكي وتوليد ذكي
-                للمحتوى والتصميم.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="icon">▣</div>
-              <h3>تعلم مستمر</h3>
-              <p>
-                يتكيف النظام مع سياق مشروعك ليقترح حلولاً أفضل، ويقلل الوقت الذي
-                تحتاجه لتصحيح الأخطاء.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="icon">◎</div>
-              <h3>نشر فوري</h3>
-              <p>
-                قم بنشر المنتج بشكل آمن وسلس مع بيئة جاهزة للتنفيذ، مراقبة، وتحليلات
-                فعلية.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section id="workflow" class="workflow">
-          <div class="container">
-            <div class="section-heading center">
-              <span class="eyebrow">كيف يعمل</span>
-              <h2>مسار بسيط، سريع، وفعال</h2>
-            </div>
-
-            <div class="workflow-grid">
-              <div class="workflow-step">
-                <span class="step-number">01</span>
-                <h3>أدخل الفكرة</h3>
-                <p>اكتب المهمة أو المنتج الذي تريد بناؤه بصيغة واضحة ومباشرة.</p>
-              </div>
-
-              <div class="workflow-step">
-                <span class="step-number">02</span>
-                <h3>أنشئ التصميم</h3>
-                <p>اجعل النموذج الأولي والواجهة قابلة للتنفيذ في دقائق معدودة.</p>
-              </div>
-
-              <div class="workflow-step">
-                <span class="step-number">03</span>
-                <h3>قم بالنشر</h3>
-                <p>شغّل التطبيق، اختبره، واحتفظ بالإنتاجية مع سرعة لا تضاهى.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" class="cta container">
-          <div class="cta-box">
-            <div>
-              <span class="eyebrow">ابدأ اليوم</span>
-              <h2>أنشئ تطبيقك التالي بذكاء أكبر.</h2>
-            </div>
-            <a class="button button-primary" href="https://aistudio.google.com/apps" target="_blank" rel="noreferrer">Start building</a>
-          </div>
-        </section>
-      </main>
-
-      <footer id="contact" class="site-footer">
-        <div class="container footer-content">
-          <div class="brand footer-brand">
-            <div class="brand-mark">AI</div>
-            <span>Studio</span>
-          </div>
-          <p>© <span id="year"></span> AI Studio. جميع الحقوق محفوظة.</p>
-        </div>
-      </footer>
-    </div>
-
-    <script src="script.js"></script>
+  <body class="bg-[#090d16] text-slate-100 antialiased selection:bg-emerald-500 selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

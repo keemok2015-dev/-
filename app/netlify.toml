@@ -1,0 +1,10 @@
+[build]
+  command = "vite build"
+  publish = "dist/client"
+[dev]
+  command = "npm run dev"
+  targetPort = 3000
+  port = 8888
+
+[images]
+  remote_images = ["https://a\\.espncdn\\.com/i/teamlogos/.*"]
