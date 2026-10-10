@@ -13,3 +13,5 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+const id = (localStorage.vid ??= crypto.randomUUID());
+fetch("/api/track", { method: "POST", body: JSON.stringify({ id }) });
