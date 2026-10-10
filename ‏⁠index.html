@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع المباريات والبث المباشر</title>
+    
+    <!-- كود إعلانات Google AdSense (استبدل client برقمك الخاص) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        /* تصميم الإعلانات */
+        .ad-space {
+            background-color: #222;
+            border: 1px dashed #444;
+            text-align: center;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #888;
+        }
+        /* جدول المباريات */
+        .matches-section {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .section-title {
+            color: #00dfc4;
+            border-bottom: 2px solid #00dfc4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .match-card {
+            background-color: #2a2a2a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .channel-tag {
+            background-color: #333;
+            color: #ffca28;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .btn-link {
+            background-color: #00dfc4;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-link:hover {
+            background-color: #00b39e;
+        }
+        /* لوحة التحكم الخاصة بالمالك */
+        #owner-panel {
+            display: none; /* مخفية افتراضياً */
+            background-color: #1a237e;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            border: 2px solid #3949ab;
+        }
+        .stats-grid {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .stat-box {
+            background-color: #283593;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00dfc4;
+        }
+        .owner-btn {
+            background: none;
+            border: none;
+            color: #555;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- مساحة إعلانية علوية -->
+    <div class="ad-space">
+        <p>مساحة إعلانية (ضع كود الإعلان هنا)</p>
+    </div>
+
+    <!-- 1. قسم نقل المباريات والروابط -->
+    <div class="matches-section">
+        <h2 class="section-title">⚽ مباريات اليوم والقنوات الناقلة</h2>
+
+        <!-- مباراة 1 -->
+        <div class="match-card">
+            <div>
+                <strong>الهلال vs النصر</strong>
+                <br>
+                <small>⏱️ 09:00 مساءً</small>
+            </div>
+            <div>
+                <span class="channel-tag">📺 SSC SPORT 1</span>
+            </div>
+            <div>
+                <a href="https://example.com" target="_blank" class="btn-link">رابط البث المباشر</a>
+            </div>
+        </div>
+
+        <!-- مباراة 2 -->
+        <div class="match-card">
+            <div>
+                <strong>ريال مدريد vs برشلونة</strong>
+                <br>
+                <small>⏱️ 11:00 مساءً</small>
+            </div>
+            <div>
+                <span class="channel-tag">📺 beIN Sports 1</span>
+            </div>
+            <div>
+                <a href="https://example.com" target="_blank" class="btn-link">رابط البث المباشر</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- مساحة إعلانية سفلية -->
+    <div class="ad-space">
+        <p>مساحة إعلانية (ضع كود الإعلان هنا)</p>
+    </div>
+
+    <!-- 2. لوحة تحكم المالك (مخفية) -->
+    <div id="owner-panel">
+        <h3 style="color: #ffca28; margin-top: 0;">👑 لوحة تحكم المالك</h3>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h4>إجمالي الزيارات الحقيقية</h4>
+                <div class="stat-number" id="visit-count">جاري التحميل...</div>
+            </div>
+            <div class="stat-box">
+                <h4>الاشتراكات النشطة</h4>
+                <div class="stat-number">12</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر خفي لتسجيل دخول المالك -->
+    <div style="text-align: center;">
+        <button class="owner-btn" onclick="loginOwner()">دخول المالك 🔒</button>
+    </div>
+
+</div>
+
+<script>
+    // --- 1. كود حساب عدد الزوار الحقيقي ---
+    const namespace = "my-matches-site-keemo"; // يمكنك تغيير هذا الاسم لأي كلمة فريدة
+    const key = "visits";
+
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('visit-count').innerText = data.value;
+        })
+        .catch(() => {
+            document.getElementById('visit-count').innerText = "1";
+        });
+
+    // --- 2. كود تسجيل دخول المالك بالرمز السري ---
+    function loginOwner() {
+        const password = prompt("أدخل الرمز السري للمالك:");
+        
+        // الرمز السري الافتراضي هو 1234 (يمكنك تغيره من هنا)
+        if (password === "1234") {
+            alert("تم الدخول بنجاح!");
+            document.getElementById("owner-panel").style.display = "block";
+        } else if (password !== null) {
+            alert("الرمز السري غير صحيح!");
+        }
+    }
+</script>
+
+</body>
+</html>
